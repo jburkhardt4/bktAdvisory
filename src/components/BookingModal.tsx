@@ -28,7 +28,6 @@ export interface BookingModalProps {
   calLink: string; // e.g. "jb-burkhardt/intro-call"
   title: string;
   duration: string;
-  badge: string;
   description: string;
 }
 
@@ -42,7 +41,7 @@ export interface BookingModalProps {
  *  - Shell (header, backdrop, close) is entirely native — only the time picker
  *    itself is Cal.com.
  */
-export function BookingModal({ open, onClose, calLink, title, badge, description }: BookingModalProps) {
+export function BookingModal({ open, onClose, calLink, title, duration, description }: BookingModalProps) {
   // Lock body scroll while open
   useEffect(() => {
     if (!open) return;
@@ -144,7 +143,8 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
             <div className="min-w-0">
               <p className="flex items-center text-xs font-semibold uppercase tracking-widest text-blue-400">
                 <DurationIcon />
-                {badge}
+                <span className="sm:hidden">{duration.split(' ')[0]} mins</span>
+                <span className="hidden sm:inline">{duration.split(' ')[0]} minutes</span>
               </p>
               <h2 className="mt-0.5 text-xl font-semibold text-slate-50 sm:text-2xl">
                 {title}
