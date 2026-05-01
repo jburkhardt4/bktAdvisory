@@ -56,22 +56,22 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
     (async () => {
       const cal = await getCalApi();
       cal('ui', {
-        hideEventTypeDetails: false,
+        hideEventTypeDetails: true,
         layout: 'month_view',
         cssVarsPerTheme: {
           light: {
-            'cal-brand': '#2563eb', // blue-600
-            'cal-text': '#0f172a', // slate-900
-            'cal-text-emphasis': '#020617', // slate-950
-            'cal-text-muted': '#64748b', // slate-500
-            'cal-text-subtle': '#94a3b8', // slate-400
-            'cal-bg': '#ffffff',
-            'cal-bg-emphasis': '#f8fafc', // slate-50
-            'cal-bg-muted': '#f1f5f9', // slate-100
-            'cal-bg-subtle': '#e2e8f0', // slate-200
-            'cal-border': '#e2e8f0', // slate-200
-            'cal-border-subtle': '#f1f5f9', // slate-100
-            'cal-border-emphasis': '#cbd5e1', // slate-300
+            'cal-brand': '#2563eb',
+            'cal-text': '#0f172a',
+            'cal-text-emphasis': '#020617',
+            'cal-text-muted': '#64748b',
+            'cal-text-subtle': '#94a3b8',
+            'cal-bg': '#f8fafc',
+            'cal-bg-emphasis': '#f1f5f9',
+            'cal-bg-muted': '#e2e8f0',
+            'cal-bg-subtle': '#e2e8f0',
+            'cal-border': '#e2e8f0',
+            'cal-border-subtle': '#f1f5f9',
+            'cal-border-emphasis': '#cbd5e1',
             'cal-border-booker': '#e2e8f0',
           },
           dark: {
@@ -101,52 +101,52 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex h-screen w-screen items-center justify-center bg-slate-950/70 p-0 backdrop-blur-md sm:p-4"
+      className="fixed inset-0 z-[9999] flex items-end justify-center overflow-y-auto bg-slate-950/70 backdrop-blur-md sm:items-center sm:p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex h-full w-full flex-col overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.55)] dark:shadow-[0_32px_80px_rgba(0,0,0,0.75)] sm:h-auto sm:max-h-[92vh] sm:max-w-[720px] sm:rounded-2xl sm:border sm:border-slate-700/60 lg:max-w-[1100px]"
+        className="relative flex w-full flex-col overflow-hidden bg-slate-50 dark:bg-[#0f172a] shadow-[0_32px_80px_rgba(0,0,0,0.55)] dark:shadow-[0_32px_80px_rgba(0,0,0,0.75)] sm:max-h-[92vh] sm:max-w-[680px] sm:rounded-2xl sm:border sm:border-slate-700/60 lg:max-w-[1180px] lg:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header — native BKT branding */}
-        <div className="relative flex-shrink-0 border-b border-slate-200 bg-gradient-to-br from-[#0F172B] via-slate-900 to-blue-950 px-6 py-5 dark:border-slate-800">
-          {/* Close */}
-          <button
-            onClick={onClose}
-            aria-label="Close booking dialog"
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-          >
-            <CloseIcon />
-          </button>
+        {/* Close button — always top-right of modal */}
+        <button
+          onClick={onClose}
+          aria-label="Close booking dialog"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+        >
+          <CloseIcon />
+        </button>
 
-          <div className="flex items-start gap-4 pr-12">
+        {/* Info panel — top bar on mobile, left column on desktop */}
+        <div className="flex-shrink-0 border-b border-slate-700/60 bg-gradient-to-br from-[#0F172B] via-slate-900 to-blue-950 px-6 py-5 lg:flex lg:w-72 lg:flex-col lg:justify-center lg:border-b-0 lg:border-r lg:border-slate-700/60 lg:py-10 xl:w-80">
+          <div className="flex items-start gap-4 pr-10 lg:flex-col lg:items-start lg:gap-5 lg:pr-0">
             <img
               src="https://lh3.googleusercontent.com/a-/ALV-UjUKsVkb4rL7QwPkEtDwipBhlu3deHrsCazzdAfDDA_HQI9kdPI=s112-c-mo"
               alt="John Burkhardt"
-              className="h-14 w-14 flex-shrink-0 rounded-full object-cover ring-2 ring-blue-500/40"
+              className="h-14 w-14 flex-shrink-0 rounded-full object-cover ring-2 ring-blue-500/40 lg:h-20 lg:w-20"
             />
             <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                 {badge}
               </p>
-              <h2 className="mt-0.5 text-xl font-semibold text-slate-50 sm:text-2xl">
+              <h2 className="mt-0.5 text-xl font-semibold text-slate-50 lg:text-2xl">
                 {title}
               </h2>
-              <p className="mt-1 text-sm text-slate-300 line-clamp-2">
+              <p className="mt-1 text-sm leading-relaxed text-slate-300 line-clamp-2 lg:line-clamp-none">
                 {description}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Cal.com embed */}
-        <div className="flex-1 overflow-hidden bg-transparent dark:bg-transparent">
+        {/* Cal.com embed — right column on desktop, stacked below on mobile */}
+        <div className="flex-1 overflow-hidden bg-slate-50 dark:bg-[#0f172a]">
           <Cal
             calLink={calLink}
-            style={{ width: '100%', height: '100%', minHeight: '620px', overflow: 'scroll' }}
+            style={{ width: '100%', height: '100%', minHeight: '560px', overflow: 'scroll' }}
             config={{
               layout: 'month_view',
               theme: isDark ? 'dark' : 'light',
