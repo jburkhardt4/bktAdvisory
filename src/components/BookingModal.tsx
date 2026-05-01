@@ -108,7 +108,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex h-full w-full flex-col overflow-hidden bg-white shadow-2xl dark:bg-slate-900 sm:h-auto sm:max-h-[92vh] sm:max-w-[920px] sm:rounded-2xl sm:border sm:border-slate-200 sm:dark:border-slate-800"
+        className="relative flex h-full w-full flex-col overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.55)] dark:shadow-[0_32px_80px_rgba(0,0,0,0.75)] sm:h-auto sm:max-h-[92vh] sm:max-w-[720px] sm:rounded-2xl sm:border sm:border-slate-700/60 lg:max-w-[1100px]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header — native BKT branding */}
@@ -143,7 +143,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
         </div>
 
         {/* Cal.com embed */}
-        <div className="flex-1 overflow-hidden bg-white dark:bg-slate-900">
+        <div className="flex-1 overflow-hidden bg-transparent dark:bg-transparent">
           <Cal
             calLink={calLink}
             style={{ width: '100%', height: '100%', minHeight: '620px', overflow: 'scroll' }}
