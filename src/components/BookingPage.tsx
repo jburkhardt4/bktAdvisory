@@ -33,11 +33,7 @@ const appointments: Appointment[] = [
     id: 'intro',
     title: 'Intro Call',
     duration: '15 min',
-<<<<<<< HEAD
-    badge: '15-Min',
-=======
     badge: '15 min',
->>>>>>> 10ded9c7e4b70c830d76fe127b3eab19b0422145
     description:
       'A quick introduction to learn about your role and the opportunity.',
     slug: 'intro-call',
@@ -47,11 +43,7 @@ const appointments: Appointment[] = [
     id: 'interview-30',
     title: '30-Minute Interview',
     duration: '30 min',
-<<<<<<< HEAD
     badge: '30-Min',
-=======
-    badge: '30 min',
->>>>>>> 10ded9c7e4b70c830d76fe127b3eab19b0422145
     description:
       'A focused conversation covering background, experience, and alignment with the position.',
     slug: '30-minute-interview',
@@ -61,11 +53,7 @@ const appointments: Appointment[] = [
     id: 'interview-60',
     title: '1-Hour Interview',
     duration: '60 min',
-<<<<<<< HEAD
-    badge: '1-Hr',
-=======
     badge: '60 min',
->>>>>>> 10ded9c7e4b70c830d76fe127b3eab19b0422145
     description:
       'An in-depth discussion including technical depth, portfolio walkthrough, and cultural-fit assessment.',
     slug: '1-hour-interview',
