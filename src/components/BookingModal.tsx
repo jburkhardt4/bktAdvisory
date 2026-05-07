@@ -101,23 +101,23 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent backdrop-blur-[0.05px] sm:items-center sm:p-4 lg:p-6"
+      className="fixed inset-0 z-[9999] flex items-end justify-center bg-white/5 backdrop-blur-[0.4px] md:items-center md:p-4 lg:p-6"
       onClick={onClose}
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[64vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
+        className="relative flex w-full flex-col max-h-[90vh] overflow-y-auto rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] md:max-h-none md:overflow-hidden md:h-[64vh] md:w-[96vw] md:max-w-[1280px] md:rounded-2xl md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── LEFT: Info panel ──────────────────────────────────────────
-             Mobile  → compact horizontal bar (avatar + badge/title)
+             Mobile  → full-width top header (flex-col, all text visible)
              Desktop → 300px fixed-width dark column, centred vertically */}
-        <div className="flex shrink-0 items-center gap-4 border-b border-white/10 bg-gradient-to-b from-[#0d1a35] via-[#0f172a] to-[#0d1a35] px-5 py-4 pr-14 sm:w-[320px] sm:flex-col sm:items-start sm:justify-center sm:gap-6 sm:border-b-0 sm:border-r sm:py-12 sm:px-8 sm:pr-8 lg:w-[340px] lg:px-10 lg:py-14 lg:pr-10">
+        <div className="flex shrink-0 flex-col items-start gap-4 border-b border-white/10 bg-gradient-to-b from-[#0d1a35] via-[#0f172a] to-[#0d1a35] px-5 py-6 md:w-[320px] md:justify-center md:gap-6 md:border-b-0 md:border-r md:py-12 md:px-8 md:pr-8 lg:w-[340px] lg:px-10 lg:py-14 lg:pr-10">
           <img
             src="https://lh3.googleusercontent.com/a-/ALV-UjUKsVkb4rL7QwPkEtDwipBhlu3deHrsCazzdAfDDA_HQI9kdPI=s112-c-mo"
             alt="John Burkhardt"
-            className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-blue-500/50 sm:h-16 sm:w-16 lg:h-20 lg:w-20"
+            className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-blue-500/50 md:h-16 md:w-16 lg:h-20 lg:w-20"
           />
           <div className="min-w-0 pb-[15px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-400">
@@ -126,7 +126,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
             <h2 className="mt-1 text-lg font-semibold leading-snug text-white lg:mt-2 lg:text-2xl">
               {title}
             </h2>
-            <p className="mt-2 hidden text-sm leading-relaxed text-slate-400 sm:block">
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">
               {description}
             </p>
           </div>
@@ -135,7 +135,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
-          <div className="relative h-full flex-1 overflow-hidden rounded-none border-0 bg-white ring-4 ring-[#0d1a35] sm:rounded-br-2xl dark:bg-[#0f172a]">
+          <div className="relative h-[600px] flex-1 overflow-hidden rounded-none border-0 bg-white ring-4 ring-[#0d1a35] md:h-full md:rounded-br-2xl dark:bg-[#0f172a]">
           {/* Close button lives here so contrast is correct on both themes */}
           <button
             onClick={onClose}
