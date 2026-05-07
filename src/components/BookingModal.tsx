@@ -55,9 +55,30 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
     if (!open) return;
     (async () => {
       const cal = await getCalApi();
-      cal('ui', {
+      (cal as (cmd: string, opts: Record<string, unknown>) => void)('ui', {
         hideEventTypeDetails: true,
         layout: 'month_view',
+        // customCss is honoured on Cal.com paid plans — normalises form field heights
+        // and fixes the phone field border-corner bleed
+        customCss: `
+          input:not([type="checkbox"]):not([type="radio"]):not([type="search"]) {
+            height: 38px !important;
+            min-height: 38px !important;
+            box-sizing: border-box !important;
+          }
+          /* Phone wrapper — ensure border-radius is clipped consistently */
+          [class*="PhoneInput"],
+          [data-testid="phone-input"],
+          .react-phone-number-input {
+            border-radius: 6px !important;
+            overflow: hidden !important;
+          }
+          /* Remove any white background bleed on flag/prefix child */
+          [class*="PhoneInput"] > *,
+          .react-phone-number-input > * {
+            background: transparent !important;
+          }
+        `,
         cssVarsPerTheme: {
           light: {
             'cal-brand': '#2563eb',
