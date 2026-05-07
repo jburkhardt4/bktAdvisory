@@ -103,6 +103,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
     <div
       className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent backdrop-blur-[0.05px] sm:items-center sm:p-4 lg:p-6"
       onClick={onClose}
+
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
