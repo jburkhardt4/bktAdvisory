@@ -69,10 +69,10 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
             'cal-bg-emphasis': '#f1f5f9',
             'cal-bg-muted': '#e2e8f0',
             'cal-bg-subtle': '#e2e8f0',
-            'cal-border': '#e2e8f0',
-            'cal-border-subtle': '#f1f5f9',
-            'cal-border-emphasis': '#cbd5e1',
-            'cal-border-booker': '#e2e8f0',
+            'cal-border': '#1e3a8a',
+            'cal-border-subtle': '#1e3a8a',
+            'cal-border-emphasis': '#1d4ed8',
+            'cal-border-booker': '#0d1a35',
           },
           dark: {
             'cal-brand': '#3b82f6', // blue-500 — slightly brighter for dark contrast
@@ -135,7 +135,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
-          <div className="relative h-full flex-1 overflow-hidden bg-white dark:bg-[#0f172a]">
+          <div className="relative h-full flex-1 overflow-hidden rounded-none border-0 bg-white ring-4 ring-[#0d1a35] sm:rounded-br-2xl dark:bg-[#0f172a]">
           {/* Close button lives here so contrast is correct on both themes */}
           <button
             onClick={onClose}
