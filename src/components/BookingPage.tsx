@@ -43,7 +43,7 @@ const appointments: Appointment[] = [
     id: 'interview-30',
     title: '30-Minute Interview',
     duration: '30 min',
-    badge: '30-Min',
+    badge: '30 min',
     description:
       'A focused conversation covering background, experience, and alignment with the position.',
     slug: '30-minute-interview',
