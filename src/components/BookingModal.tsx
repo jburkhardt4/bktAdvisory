@@ -107,7 +107,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[60vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
+        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[64vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── LEFT: Info panel ──────────────────────────────────────────
