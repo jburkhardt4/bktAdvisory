@@ -135,7 +135,11 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
+<<<<<<< HEAD
           <div className="relative h-full flex-1 overflow-hidden bg-white dark:bg-[#0f172a]">
+=======
+           <div className="relative h-full flex-1 overflow-hidden bg-white dark:bg-[#0f172a]">
+>>>>>>> c28f2047ac9fc20a79ccc2c8b19da43bc4e5da83
           {/* Close button lives here so contrast is correct on both themes */}
           <button
             onClick={onClose}
