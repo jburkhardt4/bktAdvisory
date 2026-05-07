@@ -2,6 +2,19 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Cal, { getCalApi } from '@calcom/embed-react';
 
+const DurationIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 -960 960 960"
+    className="h-4 w-4 shrink-0"
+    fill="currentColor"
+    style={{ marginRight: '10px' }}
+    aria-hidden="true"
+  >
+    <path d="M480-240q100 0 170-70t70-170q0-100-70-170t-170-70v240L310-310q35 33 78.5 51.5T480-240Zm0 160q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+  </svg>
+);
+
 const CloseIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <line x1="18" y1="6" x2="6" y2="18" />
@@ -15,6 +28,7 @@ export interface BookingModalProps {
   calLink: string; // e.g. "jb-burkhardt/intro-call"
   title: string;
   duration: string;
+  badge: string;
   description: string;
 }
 
@@ -28,7 +42,7 @@ export interface BookingModalProps {
  *  - Shell (header, backdrop, close) is entirely native — only the time picker
  *    itself is Cal.com.
  */
-export function BookingModal({ open, onClose, calLink, title, duration, description }: BookingModalProps) {
+export function BookingModal({ open, onClose, calLink, title, badge, description }: BookingModalProps) {
   // Lock body scroll while open
   useEffect(() => {
     if (!open) return;
@@ -55,22 +69,22 @@ export function BookingModal({ open, onClose, calLink, title, duration, descript
     (async () => {
       const cal = await getCalApi();
       cal('ui', {
-        hideEventTypeDetails: false,
+        hideEventTypeDetails: true,
         layout: 'month_view',
         cssVarsPerTheme: {
           light: {
-            'cal-brand': '#2563eb', // blue-600
-            'cal-text': '#0f172a', // slate-900
-            'cal-text-emphasis': '#020617', // slate-950
-            'cal-text-muted': '#64748b', // slate-500
-            'cal-text-subtle': '#94a3b8', // slate-400
+            'cal-brand': '#2563eb',
+            'cal-text': '#0f172a',
+            'cal-text-emphasis': '#020617',
+            'cal-text-muted': '#64748b',
+            'cal-text-subtle': '#94a3b8',
             'cal-bg': '#ffffff',
-            'cal-bg-emphasis': '#f8fafc', // slate-50
-            'cal-bg-muted': '#f1f5f9', // slate-100
-            'cal-bg-subtle': '#e2e8f0', // slate-200
-            'cal-border': '#e2e8f0', // slate-200
-            'cal-border-subtle': '#f1f5f9', // slate-100
-            'cal-border-emphasis': '#cbd5e1', // slate-300
+            'cal-bg-emphasis': '#f1f5f9',
+            'cal-bg-muted': '#e2e8f0',
+            'cal-bg-subtle': '#e2e8f0',
+            'cal-border': '#e2e8f0',
+            'cal-border-subtle': '#f1f5f9',
+            'cal-border-emphasis': '#cbd5e1',
             'cal-border-booker': '#e2e8f0',
           },
           dark: {
@@ -100,67 +114,54 @@ export function BookingModal({ open, onClose, calLink, title, duration, descript
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex h-screen w-screen items-center justify-center bg-slate-950/70 p-0 backdrop-blur-md sm:p-4"
+      className="fixed inset-0 z-[9999] flex items-end justify-center bg-slate-950/70 backdrop-blur-md sm:items-center sm:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex h-full w-full flex-col overflow-hidden bg-white shadow-2xl dark:bg-slate-900 sm:h-auto sm:max-h-[92vh] sm:max-w-[920px] sm:rounded-2xl sm:border sm:border-slate-200 sm:dark:border-slate-800"
+        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:rounded-2xl lg:max-h-[90vh] lg:w-[88vw] lg:max-w-[1120px] lg:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header — native BKT branding */}
-        <div className="relative flex-shrink-0 border-b border-slate-200 bg-gradient-to-br from-[#0F172B] via-slate-900 to-blue-950 px-6 py-5 dark:border-slate-800">
-          {/* Close */}
+        {/* ── LEFT: Info panel ──────────────────────────────────────────
+             Mobile  → compact horizontal bar (avatar + badge/title)
+             Desktop → 300px fixed-width dark column, centred vertically */}
+        <div className="flex shrink-0 items-center gap-4 border-b border-white/10 bg-gradient-to-b from-[#0d1a35] via-[#0f172a] to-[#0d1a35] px-5 py-4 pr-14 lg:w-[300px] lg:flex-col lg:items-start lg:justify-center lg:gap-5 lg:border-b-0 lg:border-r lg:border-white/10 lg:px-10 lg:py-14 lg:pr-10">
+          <img
+            src="https://lh3.googleusercontent.com/a-/ALV-UjUKsVkb4rL7QwPkEtDwipBhlu3deHrsCazzdAfDDA_HQI9kdPI=s112-c-mo"
+            alt="John Burkhardt"
+            className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-blue-500/50 lg:h-20 lg:w-20"
+          />
+          <div className="min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-400">
+              {badge}
+            </p>
+            <h2 className="mt-1 text-lg font-semibold leading-snug text-white lg:mt-2 lg:text-2xl">
+              {title}
+            </h2>
+            <p className="mt-2 hidden text-sm leading-relaxed text-slate-400 lg:block">
+              {description}
+            </p>
+          </div>
+        </div>
+
+        {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
+             Pure white bg — Cal renders its calendar-grid + time-slots
+             split automatically when the iframe width ≥ ~600 px. */}
+        <div className="relative flex-1 bg-white dark:bg-[#0f172a]">
+          {/* Close button lives here so contrast is correct on both themes */}
           <button
             onClick={onClose}
             aria-label="Close booking dialog"
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+            className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-slate-500 dark:hover:bg-slate-800 dark:hover:text-slate-200"
           >
             <CloseIcon />
           </button>
 
-          <div className="flex items-start gap-4 pr-12">
-            <img
-              src="https://lh3.googleusercontent.com/a-/ALV-UjUKsVkb4rL7QwPkEtDwipBhlu3deHrsCazzdAfDDA_HQI9kdPI=s112-c-mo"
-              alt="John Burkhardt"
-              className="h-14 w-14 flex-shrink-0 rounded-full object-cover ring-2 ring-blue-500/40"
-            />
-            <div className="min-w-0">
-              <p className="flex items-center text-xs font-medium uppercase tracking-widest text-blue-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 -960 960 960"
-                  className="h-4 w-4 shrink-0"
-                  fill="currentColor"
-                  style={{ marginRight: '10px' }}
-                  aria-hidden="true"
-                >
-                  <path d="M480-240q100 0 170-70t70-170q0-100-70-170t-170-70v240L310-310q35 33 78.5 51.5T480-240Zm0 160q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                </svg>
-=======
-              <p className="flex items-center gap-1.5 text-xs font-medium text-blue-400">
-                <img src={TIMELAPSE_HD} alt="" className="h-4 w-4 flex-shrink-0 object-contain" aria-hidden="true" />
->>>>>>> 59bdfe53027286d76bcb57dc84792b0975baa306
-                <span className="sm:hidden">{duration.split(' ')[0]} mins</span>
-                <span className="hidden sm:inline">{duration.split(' ')[0]} minutes</span>
-              </p>
-              <h2 className="mt-0.5 text-xl font-semibold text-slate-50 sm:text-2xl">
-                {title}
-              </h2>
-              <p className="mt-1 text-sm text-slate-300 line-clamp-2">
-                {description}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Cal.com embed */}
-        <div className="flex-1 overflow-hidden bg-white dark:bg-slate-900">
           <Cal
             calLink={calLink}
-            style={{ width: '100%', height: '100%', minHeight: '620px', overflow: 'scroll' }}
+            style={{ width: '100%', height: '100%', minHeight: '640px', overflow: 'scroll' }}
             config={{
               layout: 'month_view',
               theme: isDark ? 'dark' : 'light',

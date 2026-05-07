@@ -33,7 +33,7 @@ const appointments: Appointment[] = [
     id: 'intro',
     title: 'Intro Call',
     duration: '15 min',
-    badge: '15 MIN',
+    badge: '15-Min',
     description:
       'A quick introduction to learn about your role and the opportunity.',
     slug: 'intro-call',
@@ -43,7 +43,7 @@ const appointments: Appointment[] = [
     id: 'interview-30',
     title: '30-Minute Interview',
     duration: '30 min',
-    badge: '30 MIN',
+    badge: '30-Min',
     description:
       'A focused conversation covering background, experience, and alignment with the position.',
     slug: '30-minute-interview',
@@ -53,7 +53,7 @@ const appointments: Appointment[] = [
     id: 'interview-60',
     title: '1-Hour Interview',
     duration: '60 min',
-    badge: '1-HOUR',
+    badge: '1-Hr',
     description:
       'An in-depth discussion including technical depth, portfolio walkthrough, and cultural-fit assessment.',
     slug: '1-hour-interview',
@@ -147,10 +147,10 @@ export function BookingPage() {
             Salesforce &amp; AI Systems Architect | Founder
           </p>
           <div className="mx-auto mt-2 mb-5 h-px w-[100px] bg-blue-400"></div>
-          <div className="mt-10 mb-3 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 mb-3 grid grid-cols-2 gap-3 md:flex md:flex-wrap md:items-center md:justify-center">
             <a
               href="mailto:john@bktadvisory.com"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <span className="text-slate-300 group-hover:text-slate-300"><MailIcon /></span>
               <span className="group-hover:text-blue-400">
@@ -162,7 +162,7 @@ export function BookingPage() {
               href="https://linkedin.com/in/johndavisburkhardt"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <span className="text-slate-300 group-hover:text-slate-300"><LinkedinIcon /></span>
               <span className="group-hover:text-blue-400">LinkedIn</span>
@@ -171,7 +171,7 @@ export function BookingPage() {
               href="https://www.upwork.com/freelancers/~01dd56d750898225c0"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <UpworkIcon />
               <span className="group-hover:text-blue-400">Upwork</span>
@@ -180,7 +180,7 @@ export function BookingPage() {
               href="https://www.salesforce.com/trailblazer/profile"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <TrailheadIcon />
               <span className="group-hover:text-blue-400">Trailhead</span>
@@ -212,11 +212,7 @@ export function BookingPage() {
                 <span
                   className={`mb-4 inline-flex w-fit items-center rounded-full bg-gradient-to-r ${appt.accent} px-3 py-1 text-xs font-semibold text-white shadow-sm`}
                 >
-<<<<<<< HEAD
-=======
-                  <img src={TIMELAPSE_HD} alt="" className="h-4 w-4 object-contain" aria-hidden="true" />
->>>>>>> 59bdfe53027286d76bcb57dc84792b0975baa306
-                  {appt.duration}
+                  {appt.badge}
                 </span>
 
                 <h3 className="mb-2 text-xl font-semibold text-slate-900 transition-colors group-hover:text-blue-600 dark:text-slate-50 dark:group-hover:text-blue-400">
@@ -265,6 +261,7 @@ export function BookingPage() {
         calLink={active ? `${CAL_USERNAME}/${active.slug}` : ''}
         title={active?.title ?? ''}
         duration={active?.duration ?? ''}
+        badge={active?.badge ?? ''}
         description={active?.description ?? ''}
       />
     </>
