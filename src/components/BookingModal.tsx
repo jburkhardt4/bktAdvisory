@@ -119,7 +119,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
             alt="John Burkhardt"
             className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-blue-500/50 sm:h-16 sm:w-16 lg:h-20 lg:w-20"
           />
-          <div className="min-w-0">
+          <div className="min-w-0 pb-[15px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-400">
               {badge}
             </p>
@@ -151,6 +151,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
             config={{
               layout: 'month_view',
               theme: isDark ? 'dark' : 'light',
+              'branding[hideBranding]': '1',
             }}
           />
         </div>
