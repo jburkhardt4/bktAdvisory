@@ -101,20 +101,20 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-end justify-center bg-slate-950/70 backdrop-blur-md sm:items-center sm:p-4 lg:p-6"
+      className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent backdrop-blur-[0.05px] sm:items-center sm:p-4 lg:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[88vh] sm:w-[92vw] sm:max-w-[1120px] sm:rounded-2xl sm:flex-row"
+        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[92vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── LEFT: Info panel ──────────────────────────────────────────
              Mobile  → compact horizontal bar (avatar + badge/title)
              Desktop → 300px fixed-width dark column, centred vertically */}
-        <div className="flex shrink-0 items-center gap-4 border-b border-white/10 bg-gradient-to-b from-[#0d1a35] via-[#0f172a] to-[#0d1a35] px-5 py-4 pr-14 sm:w-[280px] sm:flex-col sm:items-start sm:justify-center sm:gap-6 sm:border-b-0 sm:border-r sm:py-12 sm:px-8 sm:pr-8 lg:w-[300px] lg:px-10 lg:py-14 lg:pr-10">
+        <div className="flex shrink-0 items-center gap-4 border-b border-white/10 bg-gradient-to-b from-[#0d1a35] via-[#0f172a] to-[#0d1a35] px-5 py-4 pr-14 sm:w-[320px] sm:flex-col sm:items-start sm:justify-center sm:gap-6 sm:border-b-0 sm:border-r sm:py-12 sm:px-8 sm:pr-8 lg:w-[340px] lg:px-10 lg:py-14 lg:pr-10">
           <img
             src="https://lh3.googleusercontent.com/a-/ALV-UjUKsVkb4rL7QwPkEtDwipBhlu3deHrsCazzdAfDDA_HQI9kdPI=s112-c-mo"
             alt="John Burkhardt"
@@ -133,6 +133,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
           </div>
         </div>
 
+            role="dialog"
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
