@@ -133,7 +133,6 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
           </div>
         </div>
 
-            role="dialog"
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
