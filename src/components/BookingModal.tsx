@@ -101,7 +101,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-end justify-center bg-slate-950/70 backdrop-blur-md sm:items-center sm:p-4 lg:p-6"
+      className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent backdrop-blur-[0.5px] sm:items-center sm:p-4 lg:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
