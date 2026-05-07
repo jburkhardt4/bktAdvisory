@@ -147,10 +147,10 @@ export function BookingPage() {
             Salesforce &amp; AI Systems Architect | Founder
           </p>
           <div className="mx-auto mt-2 mb-5 h-px w-[100px] bg-blue-400"></div>
-          <div className="mt-10 mb-3 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 mb-3 grid grid-cols-2 gap-3 md:flex md:flex-wrap md:items-center md:justify-center">
             <a
               href="mailto:john@bktadvisory.com"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <span className="text-slate-300 group-hover:text-slate-300"><MailIcon /></span>
               <span className="group-hover:text-blue-400">
@@ -162,7 +162,7 @@ export function BookingPage() {
               href="https://linkedin.com/in/johndavisburkhardt"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <span className="text-slate-300 group-hover:text-slate-300"><LinkedinIcon /></span>
               <span className="group-hover:text-blue-400">LinkedIn</span>
@@ -171,7 +171,7 @@ export function BookingPage() {
               href="https://www.upwork.com/freelancers/~01dd56d750898225c0"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <UpworkIcon />
               <span className="group-hover:text-blue-400">Upwork</span>
@@ -180,7 +180,7 @@ export function BookingPage() {
               href="https://www.salesforce.com/trailblazer/profile"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-700 bg-white/5 px-4 py-1.5 text-sm text-slate-300 backdrop-blur-sm transition-colors hover:border-blue-500/50 md:w-auto"
             >
               <TrailheadIcon />
               <span className="group-hover:text-blue-400">Trailhead</span>
