@@ -122,13 +122,13 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-end justify-center bg-white/10 backdrop-blur-[0.4px] md:items-center md:p-4 lg:p-6"
+      className="fixed inset-0 z-[9999] flex items-start justify-center bg-white/10 backdrop-blur-[0.4px] md:items-center md:p-4 lg:p-6"
       onClick={onClose}
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex w-full flex-col max-h-[90vh] overflow-y-auto rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] md:max-h-none md:overflow-hidden md:h-[64vh] md:w-[96vw] md:max-w-[1280px] md:rounded-2xl md:flex-row"
+        className="relative flex w-full flex-col max-h-[90vh] overflow-y-auto rounded-none border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] md:max-h-none md:overflow-hidden md:h-[64vh] md:w-[96vw] md:max-w-[1280px] md:rounded-2xl md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── LEFT: Info panel ──────────────────────────────────────────
