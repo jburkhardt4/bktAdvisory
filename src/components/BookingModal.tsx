@@ -103,12 +103,11 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
     <div
       className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent backdrop-blur-[0.05px] sm:items-center sm:p-4 lg:p-6"
       onClick={onClose}
-
       aria-modal="true"
       aria-label={`Book ${title}`}
     >
       <div
-        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[92vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
+        className="relative flex w-full flex-col overflow-hidden rounded-t-2xl border border-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.65)] dark:shadow-[0_24px_64px_rgba(0,0,0,0.85)] sm:h-[69vh] sm:w-[96vw] sm:max-w-[1280px] sm:rounded-2xl sm:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── LEFT: Info panel ──────────────────────────────────────────
@@ -133,11 +132,10 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
           </div>
         </div>
 
-            role="dialog"
         {/* ── RIGHT: Cal.com embed ──────────────────────────────────────
              Pure white bg — Cal renders its calendar-grid + time-slots
              split automatically when the iframe width ≥ ~600 px. */}
-        <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#0f172a]">
+          <div className="relative h-full flex-1 overflow-hidden bg-white dark:bg-[#0f172a]">
           {/* Close button lives here so contrast is correct on both themes */}
           <button
             onClick={onClose}
@@ -149,7 +147,7 @@ export function BookingModal({ open, onClose, calLink, title, badge, description
 
           <Cal
             calLink={calLink}
-            style={{ width: '100%', height: '100%', minHeight: '640px', overflow: 'scroll' }}
+            style={{ width: '100%', height: '100%', minHeight: '100%', overflow: 'scroll' }}
             config={{
               layout: 'month_view',
               theme: isDark ? 'dark' : 'light',
