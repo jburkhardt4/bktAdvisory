@@ -842,7 +842,7 @@ app.post(`${ROUTE_PREFIX}/submit-quote`, async (c) => {
     const fileName = `BKT_Quote - ${sanitizedEntityName} - ${dateStr}.pdf`;
 
     const googleScriptUrl =
-      "https://script.google.com/macros/s/AKfycbyUYuS-Bq_AjA_zw6aqHSyLdNzbQifN7McyV6_RF0dtLhvk7b1fntqOWjaqH1nrZI1_/exec";
+      "https://script.google.com/macros/s/AKfycby7F972xTMNea6dDwaKc3GvlH_kK4TeMfNA3eaAO9AZZaNG9Oa7af_E50ES0J_rT4k2/exec";
 
     const googlePayload = {
       formData: {
