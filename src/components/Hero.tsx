@@ -109,7 +109,7 @@ export function Hero() {
                 href="https://estimator.bktadvisory.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-slate-50 rounded-lg hover:bg-white/15 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 backdrop-blur-sm font-medium group"
+                className="bkt-pressable w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-slate-50 rounded-lg hover:bg-white/15 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 backdrop-blur-sm font-medium group"
               >
                 <RocketIcon size={18} className="text-blue-300" />
                 Get an Instant Quote
