@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "vendoredFrom": "bkt-ai-apply",
+  "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+  "profile": "full",
+  "generatedBy": "scripts/sync-claude-kit.mjs",
+  "note": "Flat copies vendored from the hub. Do NOT hand-edit — edit in the hub and re-run sync. `--check` fails on drift.",
+  "skills": {
+    "design-taste-frontend": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "README.md": "8387557d00875ec1eea5ad69f3c16d278960ded24abf4a2c5d6b10f7aebfddd8",
+        "SKILL.md": "56f54503b57b022146255dc981a31fba2b2a0e4d3d484b270c5bbeeb488b5f29"
+      }
+    },
+    "emil-design-eng": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "SKILL.md": "433b5a239cda18e0576e4e558532e7e53512e21fafe5b85db4894c28ec399b72"
+      }
+    },
+    "high-end-visual-design": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "SKILL.md": "e1e32f5e2d420872c6c7332b53d5ff7721946766b78c4822b424c2d512c8fdbc"
+      }
+    },
+    "redesign-existing-projects": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "SKILL.md": "98ad3e5b051bfb71b2795f7e8a6aa0d32b51ee095606c098a4b2822ac07926c9"
+      }
+    },
+    "gpt-taste": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "SKILL.md": "2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5"
+      }
+    },
+    "minimalist-ui": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "files": {
+        "SKILL.md": "36bc7328f085405f43b476938e62460fa573bf7e984e949e072bcf014831a44c"
+      }
+    }
+  },
+  "agents": {
+    "orchestrator": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "235ef937da791de22ef61239d881b1ec4c6551214c4e54765067845f0bb77308"
+    },
+    "business-analyst": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "9f981944d62ebf75bd04ed67b443acc7e5c9825e78cdb4ec50dc219dacc7e4e6"
+    },
+    "ui-ux": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "c3b2e52b9756fe836b5d7e40d3ef7a10b6f3c8c8e4949a3a40312b005b89cb4d"
+    },
+    "feature-dev": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "90a2d6691bdc0ace9581f2ea75e06044c6d7b8b5f002f515ce213f5369869e24"
+    },
+    "qa-uat": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "82b2ec3a40999bac522c11e6490a66c06dd070f7b447b580d7fd0a5b3a31e6c3"
+    },
+    "release-gate": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "a2132378d76190462816bc410c2c45a49fe7f8c43898412f32ad6b5dc6668501"
+    },
+    "context-keeper": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "d2354f31ffce31d0a837556b8c10c01c3e4eba8c983b726109209ba898c0da75"
+    },
+    "emil-design-eng": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "7f2300c5c1bfd864678f85474ed224695dc9d77b3cbd4ae654d0f4ea477a8b25"
+    },
+    "supabase-security": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "20d7d0731885e88b6adcfee336e5d7418d4d3c2742ee4af2c4c70317a92a2ac2"
+    },
+    "vercel": {
+      "source": "bkt-ai-apply",
+      "sourceType": "local",
+      "hubSha": "c95ef11671d406806e4e24f6dc0b2b2885c5e307",
+      "computedHash": "b62b9ab411874d97c9e2c677d7c8daf54e722401160f8bebfbc560755eac57f7"
+    }
+  }
+}
