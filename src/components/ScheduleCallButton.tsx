@@ -210,6 +210,7 @@ export function ScheduleCallButton({
                   {/* Back Button */}
                   <button
                     onClick={() => setShowBookingFrame(false)}
+                    aria-label="Go back"
                     className="bkt-icon-button absolute left-3 top-3 z-10 h-8 w-8 rounded-full bg-white shadow-lg dark:bg-slate-900"
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -219,6 +220,7 @@ export function ScheduleCallButton({
                   {/* Close Button */}
                   <button
                     onClick={closeModal}
+                    aria-label="Close"
                     className="bkt-icon-button absolute right-3 top-3 z-10 h-8 w-8 rounded-full bg-white text-2xl font-bold shadow-lg dark:bg-slate-900"
                   >
                     ×
