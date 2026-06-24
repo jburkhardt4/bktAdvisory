@@ -538,6 +538,44 @@ html {
   .bkt-loading-spinner {
     @apply h-8 w-8 animate-spin rounded-full border-2 border-blue-400 border-t-transparent;
   }
+
+  /* ── Motion contract (docs/conventions/design-system.md) ──────────────────
+     Centralized, reduced-motion-safe primitives. Transform/opacity only —
+     never animate layout props (width/height/top/left), never transition: all. */
+
+  /* Press affordance — subtle scale on :active. Hover-gated so touch devices
+     don't get a stuck pressed state. */
+  .bkt-pressable {
+    transition: transform 150ms ease;
+  }
+
+  @media (hover: hover) {
+    .bkt-pressable:active {
+      transform: scale(0.97);
+    }
+  }
+
+  /* One-shot entrance — fade + small rise on first paint via @starting-style. */
+  .bkt-reveal {
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+
+  @starting-style {
+    .bkt-reveal {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bkt-pressable,
+    .bkt-reveal {
+      transition: none;
+    }
+    .bkt-pressable:active {
+      transform: none;
+    }
+  }
 }
 
 /* Print styles for PDF generation */

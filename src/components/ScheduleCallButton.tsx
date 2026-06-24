@@ -55,7 +55,7 @@ export function ScheduleCallButton({
   }, [showModal]);
 
   const getButtonClass = () => {
-    const baseClass = 'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
+    const baseClass = 'bkt-pressable inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
     
     switch (variant) {
       case 'nav':
