@@ -48,7 +48,7 @@ const services: ServiceDetail[] = [
     title: 'CRM Architecture',
     subtitle: 'Full lifecycle Salesforce implementations and data foundations.',
     description:
-      'End-to-end Salesforce implementations designed for scalability, data integrity, and seamless integration across your tech stack. We architect CRM systems that become the single source of truth for your business operations.',
+      'End-to-end Salesforce implementations designed for scalability, data integrity, and reliable integration across your tech stack. We architect CRM systems that become the single source of truth for your business operations.',
     capabilities: [
       'End-to-end Salesforce implementations (FSC / Sales / Service)',
       'Data modeling, governance, and reporting foundations',
@@ -75,7 +75,7 @@ const services: ServiceDetail[] = [
     title: 'AI & Agentic Systems',
     subtitle: 'AI agents orchestrating CRM and operational data.',
     description:
-      'Design and deploy intelligent AI agent systems that connect seamlessly to your CRM and automate complex workflows. Our agentic approach goes beyond simple chatbots — building autonomous systems that can reason, decide, and act.',
+      'Design and deploy intelligent AI agent systems that connect directly to your CRM and automate complex workflows. Our agentic approach goes beyond simple chatbots — building autonomous systems that can reason, decide, and act.',
     capabilities: [
       'Design end-to-end AI agent workflows',
       'Connect agents to CRM and operational systems',
@@ -93,7 +93,7 @@ const services: ServiceDetail[] = [
     ],
     idealFor: [
       'Companies looking to automate manual processes',
-      'Teams wanting to leverage Salesforce Agentforce',
+      'Teams wanting to adopt Salesforce Agentforce',
       'Organizations ready for AI-driven decision making',
     ],
   },

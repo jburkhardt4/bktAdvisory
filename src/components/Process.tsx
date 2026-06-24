@@ -62,7 +62,7 @@ export function Process() {
       number: 4,
       icon: RocketIcon,
       title: 'Launch',
-      description: 'Deploy to production with user training, change management support, and monitoring to ensure seamless adoption and immediate impact.'
+      description: 'Deploy to production with user training, change management support, and monitoring to ensure confident adoption and immediate impact.'
     },
     {
       number: 5,

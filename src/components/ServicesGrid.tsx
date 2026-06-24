@@ -37,7 +37,7 @@ export function ServicesGrid() {
       icon: DatabaseIcon,
       title: 'CRM Architecture',
       subtitle: 'Full lifecycle Salesforce implementations and data foundations.',
-      description: 'End-to-end Salesforce implementations designed for scalability, data integrity, and seamless integration across your tech stack.',
+      description: 'End-to-end Salesforce implementations designed for scalability, data integrity, and reliable integration across your tech stack.',
       bullets: [
         'End-to-end Salesforce implementations (FSC / Sales / Service)',
         'Data modeling, governance, and reporting foundations',
@@ -48,7 +48,7 @@ export function ServicesGrid() {
       icon: BotIcon,
       title: 'AI & Agentic Systems',
       subtitle: 'AI agents orchestrating CRM and operational data.',
-      description: 'Design and deploy intelligent AI agent systems that connect seamlessly to your CRM and automate complex workflows.',
+      description: 'Design and deploy intelligent AI agent systems that connect directly to your CRM and automate complex workflows.',
       bullets: [
         'Design end-to-end AI agent workflows',
         'Connect agents to CRM and operational systems',
