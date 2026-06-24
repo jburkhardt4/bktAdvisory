@@ -576,6 +576,32 @@ html {
       transform: none;
     }
   }
+
+  /* Adopt the press affordance on the shared button utilities so every
+     pressable element has an :active state (motion contract). The color-only
+     buttons need transform added to their transition list to animate smoothly. */
+  .bkt-secondary-button,
+  .bkt-icon-button {
+    transition-property: color, background-color, border-color, box-shadow, transform;
+  }
+
+  @media (hover: hover) {
+    .bkt-primary-button:active,
+    .bkt-secondary-button:active,
+    .bkt-outline-brand-button:active,
+    .bkt-icon-button:active {
+      transform: scale(0.97);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bkt-primary-button:active,
+    .bkt-secondary-button:active,
+    .bkt-outline-brand-button:active,
+    .bkt-icon-button:active {
+      transform: none;
+    }
+  }
 }
 
 /* Print styles for PDF generation */
