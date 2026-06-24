@@ -120,7 +120,7 @@ const steps: ProcessStep[] = [
     title: 'Launch',
     duration: '1 – 2 weeks',
     description:
-      'Deploy to production with comprehensive user training, change management support, and real-time monitoring to ensure seamless adoption and immediate impact.',
+      'Deploy to production with comprehensive user training, change management support, and real-time monitoring to ensure confident adoption and immediate impact.',
     activities: [
       'Production deployment and cutover',
       'User acceptance testing (UAT)',

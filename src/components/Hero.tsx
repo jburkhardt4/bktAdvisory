@@ -82,19 +82,18 @@ export function Hero() {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 min-w-0">
             {/* Eyebrow */}
             <p className="text-sm sm:text-base text-slate-400 tracking-wide">
-              Technical Consulting Advisor | BKT Advisory
+              Salesforce + Enterprise AI Architect
             </p>
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-[38px] font-bold text-slate-50 tracking-tight leading-tight break-words">
-              Building Predictable Growth Engines via Salesforce
-              & AI Agents.
+              Where the Salesforce ecosystem meets enterprise AI.
             </h1>
 
             {/* Subhead */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-              Architecting systems that compress sales cycles
-              and operationalize AI.
+              Turning platform and AI complexity into a predictable
+              growth engine for revenue teams.
             </p>
 
             {/* Tech Stack Marquee */}

@@ -27,7 +27,7 @@ export function About() {
   const highlights = [
     {
       icon: AwardIcon,
-      title: '5x Salesforce Certified',
+      title: '8x Salesforce Certified',
       description: 'Deep expertise across Sales Cloud, Service Cloud, and Financial Services Cloud'
     },
     {
@@ -75,7 +75,7 @@ export function About() {
                 architecture and AI-powered systems.
               </p>
               <p>
-                With 5x Salesforce certifications and a background managing $837M+ in multifamily 
+                With 8x Salesforce certifications and a background managing $837M+ in multifamily
                 real estate transactions at Carter Funds, I bring a unique perspective that combines 
                 enterprise-grade technical architecture with real-world deal execution experience.
               </p>
