@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router';
+import { createBrowserRouter } from 'react-router';
 import type { ComponentType } from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
@@ -48,16 +48,16 @@ export const router = createBrowserRouter([
     path: '/auth',
     lazy: lazyComponent(() => import('./components/AuthPage'), 'AuthPage'),
   },
-  // Calendar — standalone shareable page (no nav/footer)
+  // Booking — standalone shareable pages (no nav/footer)
+  // /calendar hosts the personal interviews; /schedule hosts the consulting
+  // meetings. Both are live pages served by the shared BookingPage shell.
   {
     path: '/calendar',
-    lazy: lazyComponent(() => import('./components/BookingPage'), 'BookingPage'),
+    lazy: lazyComponent(() => import('./components/BookingPage'), 'InterviewBookingPage'),
   },
-  // Legacy redirect: old /schedule links → /calendar. Client-side fallback for
-  // SPA navigation and local dev; production also redirects at the edge (vercel.json).
   {
     path: '/schedule',
-    element: <Navigate to="/calendar" replace />,
+    lazy: lazyComponent(() => import('./components/BookingPage'), 'ConsultingBookingPage'),
   },
   // Portal routes — auth-guarded
   {
