@@ -48,10 +48,16 @@ export const router = createBrowserRouter([
     path: '/auth',
     lazy: lazyComponent(() => import('./components/AuthPage'), 'AuthPage'),
   },
-  // Schedule — standalone shareable page (no nav/footer)
+  // Booking — standalone shareable pages (no nav/footer)
+  // /calendar hosts the personal interviews; /schedule hosts the consulting
+  // meetings. Both are live pages served by the shared BookingPage shell.
+  {
+    path: '/calendar',
+    lazy: lazyComponent(() => import('./components/BookingPage'), 'InterviewBookingPage'),
+  },
   {
     path: '/schedule',
-    lazy: lazyComponent(() => import('./components/BookingPage'), 'BookingPage'),
+    lazy: lazyComponent(() => import('./components/BookingPage'), 'ConsultingBookingPage'),
   },
   // Portal routes — auth-guarded
   {

@@ -26,9 +26,11 @@ interface Appointment {
   description: string;
   slug: string;
   accent: string;
+  phone?: boolean;
 }
 
-const appointments: Appointment[] = [
+// Personal interviews — served at /calendar.
+const interviewAppointments: Appointment[] = [
   {
     id: 'intro',
     title: 'Intro Call',
@@ -38,6 +40,7 @@ const appointments: Appointment[] = [
       'A quick introduction to learn about your role and the opportunity.',
     slug: 'intro-call',
     accent: 'from-[#172554] to-[#172554]',
+    phone: true,
   },
   {
     id: 'interview-30',
@@ -57,6 +60,40 @@ const appointments: Appointment[] = [
     description:
       'An in-depth discussion including technical depth, portfolio walkthrough, and cultural-fit assessment.',
     slug: '1-hour-interview',
+    accent: 'from-violet-500 to-violet-600',
+  },
+];
+
+// Consulting meetings — served at /schedule.
+const consultingAppointments: Appointment[] = [
+  {
+    id: 'discovery',
+    title: 'Discovery Call',
+    duration: '15 min',
+    badge: '15 min',
+    description:
+      'Schedule an initial discovery call with John Burkhardt at BKT Advisory to discuss your technical needs.',
+    slug: 'discovery-call',
+    accent: 'from-[#172554] to-[#172554]',
+  },
+  {
+    id: 'strategy',
+    title: 'Strategic Planning',
+    duration: '30 min',
+    badge: '30 min',
+    description:
+      'Schedule a strategy session to discuss your project requirements, budget estimation, and how our advisory team can help you execute with precision.',
+    slug: 'strategic-planning',
+    accent: 'from-[#3d35b8] to-[#3d35b8]',
+  },
+  {
+    id: 'workshop',
+    title: 'Workshop',
+    duration: '1 hr',
+    badge: '1 hr',
+    description:
+      'Lock in a one-on-one session with our lead advisors to refine your technical strategy and ensure your infrastructure is built for long-term scalability.',
+    slug: 'workshop',
     accent: 'from-violet-500 to-violet-600',
   },
 ];
@@ -105,7 +142,14 @@ const TrailheadIcon = () => (
   />
 );
 
-export function BookingPage() {
+interface BookingPageShellProps {
+  heading: string;
+  appointments: Appointment[];
+}
+
+// Shared standalone booking layout. Hero + contact row are identical across
+// pages; only the section heading and the meeting cards differ.
+function BookingPageShell({ heading, appointments }: BookingPageShellProps) {
   const [active, setActive] = useState<Appointment | null>(null);
 
   return (
@@ -194,7 +238,7 @@ export function BookingPage() {
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50 lg:text-3xl">
-              Schedule an Interview
+              {heading}
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-slate-500 dark:text-slate-400">
               Select the meeting type below. Please pick a time that works with your schedule.
@@ -222,13 +266,13 @@ export function BookingPage() {
                   {appt.description}
                 </p>
 
-                {appt.id === 'intro' && (
+                {appt.phone && (
                   <div className="mt-5 flex items-center gap-1.5 text-slate-400 dark:text-slate-500">
                     <PhoneIcon />
                     <span className="text-xs">Phone</span>
                   </div>
                 )}
-                <div className={`${appt.id === 'intro' ? 'mt-2' : 'mt-5'} flex items-center gap-1.5`}>
+                <div className={`${appt.phone ? 'mt-2' : 'mt-5'} flex items-center gap-1.5`}>
                   <img src={MEET_LOGO} alt="Google Meet" className="h-4 w-4" />
                   <span className="text-xs text-slate-400 dark:text-slate-500">Google Meet</span>
                 </div>
@@ -265,5 +309,19 @@ export function BookingPage() {
         description={active?.description ?? ''}
       />
     </>
+  );
+}
+
+// Personal interviews — /calendar
+export function InterviewBookingPage() {
+  return (
+    <BookingPageShell heading="Schedule an Interview" appointments={interviewAppointments} />
+  );
+}
+
+// Consulting meetings — /schedule
+export function ConsultingBookingPage() {
+  return (
+    <BookingPageShell heading="Schedule a Meeting" appointments={consultingAppointments} />
   );
 }
