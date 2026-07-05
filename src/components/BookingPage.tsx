@@ -30,44 +30,39 @@ interface Appointment {
 
 const appointments: Appointment[] = [
   {
-    id: 'intro',
-    title: 'Intro Call',
+    id: 'discovery',
+    title: 'Discovery Call',
     duration: '15 min',
     badge: '15 min',
     description:
-      'A quick introduction to learn about your role and the opportunity.',
-    slug: 'intro-call',
+      'Schedule an initial discovery call with John Burkhardt at BKT Advisory to discuss your technical needs.',
+    slug: 'discovery-call',
     accent: 'from-[#172554] to-[#172554]',
   },
   {
-    id: 'interview-30',
-    title: '30-Minute Interview',
+    id: 'strategy',
+    title: 'Strategic Planning',
     duration: '30 min',
     badge: '30 min',
     description:
-      'A focused conversation covering background, experience, and alignment with the position.',
-    slug: '30-minute-interview',
+      'Schedule a strategy session to discuss your project requirements, budget estimation, and how our advisory team can help you execute with precision.',
+    slug: 'strategic-planning',
     accent: 'from-[#3d35b8] to-[#3d35b8]',
   },
   {
-    id: 'interview-60',
-    title: '1-Hour Interview',
-    duration: '60 min',
-    badge: '60 min',
+    id: 'workshop',
+    title: 'Workshop',
+    duration: '1 hr',
+    badge: '1 hr',
     description:
-      'An in-depth discussion including technical depth, portfolio walkthrough, and cultural-fit assessment.',
-    slug: '1-hour-interview',
+      'Lock in a one-on-one session with our lead advisors to refine your technical strategy and ensure your infrastructure is built for long-term scalability.',
+    slug: 'workshop',
     accent: 'from-violet-500 to-violet-600',
   },
 ];
 
 // ── Icon helpers (no lucide-react) ──────────────────────────────────────────
 
-const PhoneIcon = () => (
-  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 13.93a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 3.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17z" />
-  </svg>
-);
 const ArrowRightIcon = () => (
   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -194,7 +189,7 @@ export function BookingPage() {
         <div className="mx-auto max-w-[1100px] px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50 lg:text-3xl">
-              Schedule an Interview
+              Schedule a Meeting
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-slate-500 dark:text-slate-400">
               Select the meeting type below. Please pick a time that works with your schedule.
@@ -222,13 +217,7 @@ export function BookingPage() {
                   {appt.description}
                 </p>
 
-                {appt.id === 'intro' && (
-                  <div className="mt-5 flex items-center gap-1.5 text-slate-400 dark:text-slate-500">
-                    <PhoneIcon />
-                    <span className="text-xs">Phone</span>
-                  </div>
-                )}
-                <div className={`${appt.id === 'intro' ? 'mt-2' : 'mt-5'} flex items-center gap-1.5`}>
+                <div className="mt-5 flex items-center gap-1.5">
                   <img src={MEET_LOGO} alt="Google Meet" className="h-4 w-4" />
                   <span className="text-xs text-slate-400 dark:text-slate-500">Google Meet</span>
                 </div>
