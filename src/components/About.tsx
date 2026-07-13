@@ -81,7 +81,7 @@ export function About() {
               </p>
               <p>
                 My approach isn't just about implementing technology—it's about architecting systems 
-                that create predictable, scalable growth. From CRM foundations to AI agent orchestration, 
+                that create revenue-generating growth. From CRM foundations to AI agent orchestration, 
                 I build solutions that compress sales cycles, accelerate pipeline velocity, and deliver 
                 measurable ROI.
               </p>

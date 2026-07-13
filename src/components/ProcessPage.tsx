@@ -141,7 +141,7 @@ const steps: ProcessStep[] = [
     title: 'Grow',
     duration: 'Ongoing',
     description:
-      'Continuous optimization, performance tracking, and strategic enhancements to scale your growth engine and maximize ROI. We stay engaged to ensure your systems evolve with your business.',
+      'Continuous optimization, performance tracking, and strategic enhancements to scale revenue-generating growth and maximize ROI. We stay engaged to ensure your systems evolve with your business.',
     activities: [
       'Performance monitoring and analytics',
       'Iterative optimization and A/B testing',

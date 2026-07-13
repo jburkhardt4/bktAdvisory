@@ -68,7 +68,7 @@ export function Process() {
       number: 5,
       icon: TrendingUpIcon,
       title: 'Grow',
-      description: 'Continuous optimization, performance tracking, and strategic enhancements to scale your growth engine and maximize ROI.'
+      description: 'Continuous optimization, performance tracking, and strategic enhancements to scale revenue-generating growth and maximize ROI.'
     }
   ];
 
