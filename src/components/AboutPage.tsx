@@ -75,7 +75,7 @@ export function AboutPage() {
             About
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Salesforce & AI Systems Architect helping companies build predictable growth engines.
+            Salesforce & AI Systems Architect helping companies turn complexity into clarity for revenue-generating teams.
           </p>
         </div>
       </section>

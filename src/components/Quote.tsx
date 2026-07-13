@@ -292,7 +292,7 @@ export function Quote({ data, onBack, personaMode }: QuoteProps) {
               ]}),
               new Paragraph({ children: [
                 new TextRun({
-                  text: fd.valueStatement || "This customized solution will streamline your operations, increase efficiency, and provide a predictable growth engine for your organization through strategic CRM architecture and AI-powered automation.",
+                  text: fd.valueStatement || "This customized solution will streamline your operations, increase efficiency, and bring clarity to your revenue-generating teams through strategic CRM architecture and AI-powered automation.",
                   size: sz.sm, color: slate700, font: "Calibri", italics: true,
                 }),
               ]}),
@@ -753,7 +753,7 @@ export function Quote({ data, onBack, personaMode }: QuoteProps) {
       projectDescription: fd.projectDescription || '',
 
       // Value Statement
-      valueStatement: fd.valueStatement || 'This customized solution will streamline your operations, increase efficiency, and provide a predictable growth engine for your organization through strategic CRM architecture and AI-powered automation.',
+      valueStatement: fd.valueStatement || 'This customized solution will streamline your operations, increase efficiency, and bring clarity to your revenue-generating teams through strategic CRM architecture and AI-powered automation.',
 
       // Cost Breakdown
       baseHours: `${data.baseHours}`,
@@ -1155,7 +1155,7 @@ export function Quote({ data, onBack, personaMode }: QuoteProps) {
             <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-5 rounded-lg border-l-4 border-blue-700">
               <h3 className="text-blue-700 mb-2 font-semibold">Project Value Statement</h3>
               <p className="text-slate-700 text-sm italic">
-                {data.formData.valueStatement || "This customized solution will streamline your operations, increase efficiency, and provide a predictable growth engine for your organization through strategic CRM architecture and AI-powered automation."}
+                {data.formData.valueStatement || "This customized solution will streamline your operations, increase efficiency, and bring clarity to your revenue-generating teams through strategic CRM architecture and AI-powered automation."}
               </p>
             </div>
           </div>
@@ -1504,7 +1504,7 @@ export function Quote({ data, onBack, personaMode }: QuoteProps) {
             <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-5 rounded-lg border-l-4 border-blue-700">
               <h3 className="text-blue-700 mb-2 font-semibold">Project Value Statement</h3>
               <p className="text-slate-700 text-sm italic">
-                {data.formData.valueStatement || "This customized solution will streamline your operations, increase efficiency, and provide a predictable growth engine for your organization through strategic CRM architecture and AI-powered automation."}
+                {data.formData.valueStatement || "This customized solution will streamline your operations, increase efficiency, and bring clarity to your revenue-generating teams through strategic CRM architecture and AI-powered automation."}
               </p>
             </div>
           </div>

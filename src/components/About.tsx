@@ -49,7 +49,7 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-neutral-900 mb-4 font-bold text-[36px]">About Me</h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
-            Salesforce & AI Systems Architect helping companies build predictable growth engines
+            Salesforce & AI Systems Architect helping companies turn complexity into clarity for revenue-generating teams
           </p>
         </div>
 

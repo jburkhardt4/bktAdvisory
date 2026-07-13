@@ -35,7 +35,7 @@ export function FinalCTA() {
               {/* Headline */}
               <div className="space-y-4">
                 <h2 className="text-white">
-                  Ready to Build a Predictable Growth Engine?
+                  Ready to Turn Complexity Into Clarity?
                 </h2>
                 <p className="text-blue-100 max-w-2xl mx-auto">
                   Book a 30-minute strategy call to discuss your Salesforce and AI stack. 
