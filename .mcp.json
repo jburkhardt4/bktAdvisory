@@ -1,9 +1,8 @@
 {
-	"servers": {
-		"my-mcp-server-d0684831": {
-			"url": "https://mcp.jam.dev/mcp",
-			"type": "http"
-		}
-	},
-	"inputs": []
+  "servers": {
+    "Jam": {
+      "url": "https://mcp.jam.dev/mcp",
+      "type": "http"
+    }
+  }
 }
