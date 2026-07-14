@@ -1,5 +1,11 @@
 {
   "permissions": {
-    "defaultMode": "plan"
+    "defaultMode": "auto"
+  },
+  "css.customData": [".vscode/tailwind.json"],
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
   }
 }
