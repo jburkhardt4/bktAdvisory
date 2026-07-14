@@ -58,7 +58,7 @@ export function ServicesGrid() {
     {
       icon: TrendingUpIcon,
       title: 'RevOps & Transformation',
-      subtitle: 'Turning CRM + AI into predictable revenue.',
+      subtitle: 'Turning CRM + AI into revenue-generating operations.',
       description: 'Transform your revenue operations by combining CRM intelligence with AI automation to compress cycles and accelerate growth.',
       bullets: [
         'Compress reimbursement and approval cycles',

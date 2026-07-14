@@ -100,7 +100,7 @@ const services: ServiceDetail[] = [
   {
     icon: TrendingUpIcon,
     title: 'RevOps & Transformation',
-    subtitle: 'Turning CRM + AI into predictable revenue.',
+    subtitle: 'Turning CRM + AI into revenue-generating operations.',
     description:
       'Transform your revenue operations by combining CRM intelligence with AI automation to compress cycles and accelerate growth. We don\'t just implement technology — we architect the systems that drive measurable business outcomes.',
     capabilities: [

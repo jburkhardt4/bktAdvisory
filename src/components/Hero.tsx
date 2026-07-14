@@ -92,8 +92,8 @@ export function Hero() {
 
             {/* Subhead */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-              Turning platform and AI complexity into a predictable
-              growth engine for revenue teams.
+              Turning platform and AI complexity into clarity for
+              revenue-generating teams.
             </p>
 
             {/* Tech Stack Marquee */}

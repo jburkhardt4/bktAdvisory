@@ -12,7 +12,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-white font-bold">BKT Advisory</h3>
             <p className="text-slate-300 text-sm">
-              Building predictable growth engines via Salesforce & AI for Startups, FinTech, and InsurTech.
+              Bringing clarity to revenue-generating teams via Salesforce & AI for Startups, FinTech, and InsurTech.
             </p>
           </div>
 
