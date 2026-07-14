@@ -342,13 +342,18 @@ html {
 
   .bkt-hero-diagram-node {
     @apply inline-flex min-h-[52px] items-center justify-center rounded-lg border-2 px-8 py-3 text-sm font-semibold text-slate-50 transition-all duration-300;
-    background-color: rgba(255, 255, 255, 0.10);
+    /* Opaque slate fill (not a translucent white). The 10%-white fill let the
+       card's uneven backdrop — the hero gradient + decorative blur-3xl glow
+       blobs — bleed through blur(12px) as a diagonal "half-filled" look on the
+       larger Salesforce CRM node. An opaque base keeps the glass depth without
+       the artifact, and renders uniformly across all four diagram nodes. */
+    background-color: rgba(30, 41, 59, 0.72);
     border-color: var(--bkt-on-brand-outline);
     backdrop-filter: blur(12px);
   }
 
   .bkt-hero-diagram-node:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(30, 41, 59, 0.85);
     border-color: var(--bkt-on-brand-outline-hover);
     box-shadow: var(--bkt-on-brand-outline-glow);
   }
@@ -380,15 +385,10 @@ html {
     animation: bkt-marquee-scroll-right 30s linear infinite;
   }
 
-  /* Honor reduced-motion: freeze the decorative marquee (contract: no
-     perpetual loops). Pills stay readable in a static position. */
-  @media (prefers-reduced-motion: reduce) {
-    .bkt-marquee-track-left,
-    .bkt-marquee-track-right {
-      animation: none;
-      transform: none;
-    }
-  }
+  /* The decorative tech-pill marquee intentionally animates for all visitors,
+     including those with prefers-reduced-motion. Product decision: this slow,
+     non-essential scroll is core to the hero's feel, so it is not frozen under
+     reduced-motion. (Other reduced-motion guards for pressables/reveals remain.) */
 
   .bkt-tech-pill {
     @apply inline-flex items-center whitespace-nowrap rounded-full px-4 py-2 text-sm text-slate-50;
