@@ -391,11 +391,17 @@ html {
   }
 
   .bkt-tech-pill {
-    @apply inline-flex items-center rounded-full px-4 py-2 text-sm text-slate-50 transition-all duration-200;
+    @apply inline-flex items-center whitespace-nowrap rounded-full px-4 py-2 text-sm text-slate-50;
     border: 1px solid var(--bkt-on-brand-outline);
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    /* Only border-color + box-shadow change on hover: scope the transition
+       instead of `transition: all`. Drop the per-pill backdrop-filter — the
+       marquee duplicates each row, so ~40–52 pills would each composite a live
+       blur while scrolling; on the dark hero gradient the frosted look is
+       barely visible but the compositing cost is not. whitespace-nowrap keeps
+       multi-word labels (e.g. "Financial Services Cloud (FSC)") on one line. */
+    transition: border-color 200ms ease, box-shadow 200ms ease;
   }
 
   .bkt-tech-pill:hover {
