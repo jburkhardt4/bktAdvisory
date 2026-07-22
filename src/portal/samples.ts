@@ -1,7 +1,7 @@
 /**
  * Sample input/output objects that demonstrate the mapper contract.
  *
- * These samples serve as documentation and can be used by the Bktadvisory
+ * These samples serve as documentation and can be used by the BKT-Advisory
  * portal repo for integration testing.
  */
 

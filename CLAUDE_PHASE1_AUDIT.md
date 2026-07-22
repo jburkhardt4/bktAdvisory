@@ -3,13 +3,13 @@
 **Audit Date:** 2026-04-01  
 **Auditor:** Claude Code (Sonnet 4.6)  
 **Mode:** Read-only architecture audit — no code modified  
-**Repositories:** Bktadvisory (main site) + Bktadvisoryprojectestimator (estimator)
+**Repositories:** BKT-Advisory (main site) + Bktadvisoryprojectestimator (estimator)
 
 ---
 
 ## 1. Phase 1 Executive Summary
 
-Both repositories are largely launch-ready architecturally. The **Bktadvisory** main site has a mature auth system (admin/client role guards, retry logic, metadata fallback), 42 Vitest unit tests, and a 6-phase orchestration plan. The **estimator** is a focused single-page application with AI-driven quote generation and a clean portal mapper layer for cross-repo handoff.
+Both repositories are largely launch-ready architecturally. The **BKT-Advisory** main site has a mature auth system (admin/client role guards, retry logic, metadata fallback), 42 Vitest unit tests, and a 6-phase orchestration plan. The **estimator** is a focused single-page application with AI-driven quote generation and a clean portal mapper layer for cross-repo handoff.
 
 **Critical blockers before launch:**
 
@@ -22,9 +22,9 @@ Both repositories are largely launch-ready architecturally. The **Bktadvisory** 
 
 ## 2. Repository Inventory
 
-| Property | Bktadvisory | Bktadvisoryprojectestimator |
+| Property | BKT-Advisory | Bktadvisoryprojectestimator |
 | --- | --- | --- |
-| Path | `/workspaces/Bktadvisory/` | `/workspaces/Bktadvisory/Bktadvisoryprojectestimator/` |
+| Path | `/workspaces/BKT-Advisory/` | `/workspaces/BKT-Advisory/Bktadvisoryprojectestimator/` |
 | Framework | React 18 + Vite 6.4.1 | React 18 + Vite 6.3.5 |
 | Language | TypeScript (strict) | TypeScript |
 | Styling | Tailwind CSS v4.1.12 | Tailwind CSS v4.1.12 |
@@ -42,7 +42,7 @@ Both repositories are largely launch-ready architecturally. The **Bktadvisory** 
 
 ## 3. Architecture Map
 
-### 3a. Bktadvisory — Route Surface
+### 3a. BKT-Advisory — Route Surface
 
 ```plaintext
 Public (no auth):
@@ -65,7 +65,7 @@ Admin-only (RequireAuth + AdminRoute):
   /portal/admin/milestones  → AdminMilestonesPage
 ```
 
-### 3b. Bktadvisory — Auth Data Flow
+### 3b. BKT-Advisory — Auth Data Flow
 
 ```plaintext
 App mount
@@ -81,7 +81,7 @@ Route guards:
   AdminRoute:  role !== 'admin' → /portal
 ```
 
-### 3c. Bktadvisory — Key Module Files
+### 3c. BKT-Advisory — Key Module Files
 
 | File | Purpose |
 | --- | --- |
@@ -109,7 +109,7 @@ EstimatorAppShell (state root)
 Portal handoff layer (/src/portal/):
   mapQuoteDataToQuoteRecord()
   mapAcceptedQuoteToProjectRecord()
-  → Consumed by Bktadvisory portal on quote acceptance
+  → Consumed by BKT-Advisory portal on quote acceptance
 ```
 
 ### 3e. Cross-Repo Data Flow
@@ -119,9 +119,9 @@ Estimator:
   User fills 9 steps
   → calculateQuote() → QuoteData
   → mapQuoteDataToQuoteRecord() → QuoteRecord
-  → Portal (Bktadvisory) persists QuoteRecord to Supabase
+  → Portal (BKT-Advisory) persists QuoteRecord to Supabase
 
-Portal (Bktadvisory):
+Portal (BKT-Advisory):
   Admin reviews quotes
   → mark status = "accepted"
   → mapAcceptedQuoteToProjectRecord() → ProjectRecord
@@ -133,7 +133,7 @@ Portal (Bktadvisory):
 
 ## 4. Instruction File Compliance Summary
 
-### 4a. Bktadvisory — `docs/orchestration/agentic-release-plan.md`
+### 4a. BKT-Advisory — `docs/orchestration/agentic-release-plan.md`
 
 | Requirement | Status | Notes |
 | --- | --- | --- |
@@ -170,7 +170,7 @@ Portal (Bktadvisory):
 
 ## 5. Testing and Verification Assessment
 
-### 5a. Bktadvisory — Existing Test Coverage
+### 5a. BKT-Advisory — Existing Test Coverage
 
 | Test File | Covers |
 | --- | --- |
@@ -211,7 +211,7 @@ Portal (Bktadvisory):
 
 ### 5c. Minimum Practical Release Gate
 
-**Bktadvisory:**
+**BKT-Advisory:**
 
 - [ ] `npm run typecheck` passes clean
 - [ ] `npm run lint` passes clean
@@ -236,7 +236,7 @@ Portal (Bktadvisory):
 
 | # | Blocker | Repo | Severity | Phase |
 | --- | --- | --- | --- | --- |
-| B1 | No Playwright E2E tests configured | Bktadvisory | CRITICAL | Phase 5 |
+| B1 | No Playwright E2E tests configured | BKT-Advisory | CRITICAL | Phase 5 |
 | B2 | No test suite in estimator repo | Estimator | CRITICAL | Phase 5 |
 | B3 | Quote-to-project end-to-end flow unverified | Both | HIGH | Phase 3 |
 | B4 | No visual regression artifacts (light/dark/mobile) | Both | HIGH | Release gate |
@@ -244,8 +244,8 @@ Portal (Bktadvisory):
 | B6 | No React Error Boundary in either repo | Both | MEDIUM | Reliability |
 | B7 | PDF.js worker loaded from unpkg CDN | Estimator | MEDIUM | Reliability |
 | B8 | Google Apps Script URL hardcoded (no rotation path) | Estimator | MEDIUM | Security |
-| B9 | Playwright referenced in orchestration docs but absent from `package.json` | Bktadvisory | HIGH | Phase 5 |
-| B10 | Admin CRM API not covered by RLS audit evidence | Bktadvisory | MEDIUM | Auth integrity |
+| B9 | Playwright referenced in orchestration docs but absent from `package.json` | BKT-Advisory | HIGH | Phase 5 |
+| B10 | Admin CRM API not covered by RLS audit evidence | BKT-Advisory | MEDIUM | Auth integrity |
 | B11 | Quote ID generated client-side (no persistent UUID strategy) | Estimator | MEDIUM | Data integrity |
 | B12 | Tailwind design tokens not formalized (v4 zero-config) | Both | LOW | Phase 1 |
 
@@ -256,7 +256,7 @@ Portal (Bktadvisory):
 ### Immediate (Phase 1 completion)
 
 1. Run `npm run typecheck && npm run build` in both repos — confirm no errors
-2. Add Playwright to Bktadvisory: `npm install -D @playwright/test && npx playwright install`
+2. Add Playwright to BKT-Advisory: `npm install -D @playwright/test && npx playwright install`
 3. Write Playwright test: sign in → `/portal` happy path + admin redirect rejection
 4. Create estimator portal mapper unit tests (vitest): `mapQuoteDataToQuoteRecord` + `mapAcceptedQuoteToProjectRecord`
 5. Generate `.env.example` for both repos (placeholder values only)
@@ -295,7 +295,7 @@ Portal (Bktadvisory):
 - The 42 Vitest tests currently pass (not executed in this pass)
 - `npm run build` succeeds in both repos (not executed in this pass)
 - Supabase RLS policies correctly restrict client access to own data (not query-tested)
-- Portal QuoteRecord consumption in Bktadvisory is wired up to the estimator mapper output (end-to-end not traced)
+- Portal QuoteRecord consumption in BKT-Advisory is wired up to the estimator mapper output (end-to-end not traced)
 - Estimator is deployed to `https://estimator.bktadvisory.com` as a static SPA
 - OpenAI API key is set in Supabase edge function secrets (not verified)
 - Google Apps Script endpoint is accessible and correctly receives quote data
@@ -312,7 +312,7 @@ The following areas must not be modified until their Phase is active and release
 | `src/contexts/AuthContext.tsx` | Core auth logic — any change affects all protected routes | Phase 2 |
 | `supabase/migrations/` | Schema changes require coordinated migration + RLS audit | Phase 2 / Phase 3 |
 | `src/components/EstimatorBoundary.tsx` | Cross-repo redirect — requires validating estimator deployment URL | Phase 2 |
-| Portal mapper layer (`/src/portal/`) in estimator | Integration contract — Bktadvisory must update consumption code in sync | Phase 3 |
+| Portal mapper layer (`/src/portal/`) in estimator | Integration contract — BKT-Advisory must update consumption code in sync | Phase 3 |
 | Quote calculation logic in `Estimator.tsx` | Revenue-critical — requires manual quote verification test | Phase 3 |
 | `supabase/functions/server/index.tsx` (estimator) | AI endpoint logic — requires functional validation of all 4 endpoints | Phase 3 |
 | `src/components/admin/adminCrmApi.ts` | Untested CRM integration — needs RLS audit first | Phase 3 |

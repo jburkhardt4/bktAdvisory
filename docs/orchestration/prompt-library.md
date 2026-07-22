@@ -194,7 +194,7 @@ Task:
 [Insert the specific task here]
 
 Repository scope:
-- jburkhardt4/Bktadvisory
+- jburkhardt4/BKT-Advisory
 - jburkhardt4/Bktadvisoryprojectestimator
 
 Constraints:

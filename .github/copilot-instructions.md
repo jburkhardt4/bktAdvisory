@@ -1,7 +1,7 @@
 ---
 applyTo: "**/*.tsx, **/*.ts"
 ---
-# Bktadvisory Workspace Instructions
+# BKT-Advisory Workspace Instructions
 
 ## Overview
 This workspace is a React + TypeScript project using Vite for development and build. It follows strict conventions for routing, authentication, and component structure. See the [README.md][documentationReference]for startup and build commands.
