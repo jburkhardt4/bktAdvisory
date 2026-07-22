@@ -4,13 +4,13 @@ Executive Summary:
 Below is the final corrected version of the chronological prompt plan, with the exact GitHub repo or Figma project you should submit each prompt into.
 
 The repo/project split should follow the current internal boundaries:
- • Bktadvisory is the main-site / marketing platform repo and should own standard routing, auth entry, portal UI, and main-site CTA behavior. Its guidelines explicitly say it handles the front-end marketing site and standard routing, and does not own the estimator’s complex state logic.
+ • BKT-Advisory is the main-site / marketing platform repo and should own standard routing, auth entry, portal UI, and main-site CTA behavior. Its guidelines explicitly say it handles the front-end marketing site and standard routing, and does not own the estimator’s complex state logic.
  • Bktadvisoryprojectestimator is the estimator repo and should own the estimator’s single-page conditional rendering, showQuote, quoting logic, AI refinement, and document generation. Its guidelines explicitly say the estimator uses single-page conditional rendering and that marketing/portfolio work belongs to the main BKT Advisory site.
  • The estimator repo README also ties that codebase directly to the “BKT Advisory (Project Estimator)” Figma design.
 
 Canonical Destination Map:
   GitHub Repos
-   • Bktadvisory
+   • BKT-Advisory
    • Bktadvisoryprojectestimator
 
 Figma Projects:
@@ -61,13 +61,13 @@ Important:
 ————
 
 2) Copilot — add the thin top-level route shell
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma project: none
 
 You are implementing Approach A for the BKT Advisory main website ecosystem.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - This repo owns the top-level marketing shell, standard routing, auth entry, and portal UI.
 - Do NOT move the estimator’s internal quote state logic into this repo.
 
@@ -106,13 +106,13 @@ Important:
 ————
 
 3) Copilot — define lifecycle types before any portal design
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma project: none
 
 You are creating the canonical lifecycle model for the BKT Advisory authenticated portal.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - These lifecycle types are for the client portal and related main-site authenticated experiences.
 
 Goal:
@@ -189,13 +189,13 @@ Important:
 ————
 
 4) Copilot — build the backend-triggered case-study email action
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma project: none
 
 You are implementing backend-triggered case-study email automation for BKT Advisory.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - This is for the main-site "Request Case Study" CTA, not the estimator app.
 
 Requirements:
@@ -231,13 +231,13 @@ Important:
 ————
 
 5) Copilot — connect the main-site case-study CTA to the backend
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma project: none
 
 You are updating the BKT Advisory main site to bind the existing "Request Case Study" buttons to a backend-triggered action.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - The current CTA exists in `src/components/SelectedWork.tsx`.
 
 Context:
@@ -269,7 +269,7 @@ Important:
 
 6) Figma — design the auth gateway
    • Submit into Figma project: BKT Advisory
-   • GitHub repo for later implementation: Bktadvisory
+   • GitHub repo for later implementation: BKT-Advisory
 
 Design a new BKT Advisory Authentication Gateway for a React + Tailwind enterprise web app.
 
@@ -310,13 +310,13 @@ Design requirements:
 ————
 
 7) Copilot — implement the auth gateway page
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma source: BKT Advisory
 
 You are implementing the BKT Advisory Auth Gateway page at `/auth`.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - Build from the approved auth gateway design in the `BKT Advisory` Figma project.
 
 Requirements:
@@ -354,7 +354,7 @@ Important:
 
 8) Figma — design the portal dashboard from the approved lifecycle states
    • Submit into Figma project: BKT Advisory
-   • GitHub repo for later implementation: Bktadvisory
+   • GitHub repo for later implementation: BKT-Advisory
 
 Design a new authenticated BKT Advisory Client Portal dashboard for `/portal`.
 
@@ -399,7 +399,7 @@ Design requirements:
 
 9) Figma — design the project detail / activity experience
    • Submit into Figma project: BKT Advisory
-   • GitHub repo for later implementation: Bktadvisory
+   • GitHub repo for later implementation: BKT-Advisory
 
 Design a BKT Advisory Project Detail / Activity screen for the authenticated client portal.
 
@@ -436,13 +436,13 @@ Design requirements:
 ————
 
 10) Copilot — implement the portal shell and dashboard
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma source: BKT Advisory
 
 You are implementing the authenticated BKT Advisory Client Portal for Approach A.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - Build from the approved portal dashboard designs in the `BKT Advisory` Figma project.
 
 Requirements:
@@ -480,13 +480,13 @@ Important:
 ————
 
 11) Copilot — implement the project detail screen
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma source: BKT Advisory
 
 You are implementing a BKT Advisory Project Detail page inside the authenticated portal.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - Build from the approved project detail design in the `BKT Advisory` Figma project.
 
 Requirements:
@@ -521,7 +521,7 @@ Important:
 
 12) Copilot — connect estimator quote output to portal records
    • Primary GitHub repo: Bktadvisoryprojectestimator
-   • Secondary receiving repo: Bktadvisory
+   • Secondary receiving repo: BKT-Advisory
 Figma project: none
 
 You are integrating the existing BKT Advisory estimator output into the new authenticated portal model.
@@ -529,7 +529,7 @@ You are integrating the existing BKT Advisory estimator output into the new auth
 Repository context:
 - You are working inside the `Bktadvisoryprojectestimator` repository.
 - This repo should emit or prepare lifecycle-aware quote/project payloads without changing the current estimator UX.
-- The resulting mapper contract must be consumable by the portal in the `Bktadvisory` repository.
+- The resulting mapper contract must be consumable by the portal in the `BKT-Advisory` repository.
 
 Context:
 - The estimator must remain self-contained and preserve `showQuote`.
@@ -555,7 +555,7 @@ Task:
    - mapper functions
    - types used
    - sample input/output objects
-   - integration notes showing what the `Bktadvisory` portal repo must consume
+   - integration notes showing what the `BKT-Advisory` portal repo must consume
 
 Important:
 - Do not change the estimator’s current quote-generation flow.
@@ -563,13 +563,13 @@ Important:
 ————
 
 13) Copilot — add auth guard and shell hardening
-   • Submit into GitHub repo: Bktadvisory
+   • Submit into GitHub repo: BKT-Advisory
    • Figma project: none
 
 You are hardening the BKT Advisory Approach A architecture.
 
 Repository context:
-- You are working inside the `Bktadvisory` repository.
+- You are working inside the `BKT-Advisory` repository.
 - This repo owns `/auth`, `/portal`, and the top-level shell.
 
 Requirements:
@@ -597,7 +597,7 @@ Important:
 
 14) Copilot — final QA / regression sweep
   Run twice
-   1. GitHub repo: Bktadvisory
+   1. GitHub repo: BKT-Advisory
    2. GitHub repo: Bktadvisoryprojectestimator
       Figma projects for reference: BKT Advisory, BKT Advisory (Project Estimator)
 
@@ -649,24 +649,24 @@ Recommended Working Rhythm
 
 Prompt Execution – Exact Sequence:
  • Copilot architecture extraction → Bktadvisoryprojectestimator
- • Copilot route shell → Bktadvisory
- • Copilot lifecycle types → Bktadvisory
- • Copilot backend email function → Bktadvisory
- • Copilot CTA integration → Bktadvisory
+ • Copilot route shell → BKT-Advisory
+ • Copilot lifecycle types → BKT-Advisory
+ • Copilot backend email function → BKT-Advisory
+ • Copilot CTA integration → BKT-Advisory
  • Figma auth gateway → BKT Advisory
- • Copilot auth gateway build → Bktadvisory
+ • Copilot auth gateway build → BKT-Advisory
  • Figma portal dashboard → BKT Advisory
  • Figma project detail → BKT Advisory
- • Copilot portal dashboard build → Bktadvisory
- • Copilot project detail build → Bktadvisory
+ • Copilot portal dashboard build → BKT-Advisory
+ • Copilot project detail build → BKT-Advisory
  • Copilot estimator → portal mappers → Bktadvisoryprojectestimator
- • Copilot auth guard → Bktadvisory
+ • Copilot auth guard → BKT-Advisory
  • Copilot final QA → both repos, one pass each
 ————
 
 Quick Routing Rule:
 
-Use Bktadvisory + BKT Advisory for:
+Use BKT-Advisory + BKT Advisory for:
  • auth
  • portal
  • main navigation

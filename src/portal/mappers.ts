@@ -2,7 +2,7 @@
  * Mapper functions that transform estimator QuoteData into portal lifecycle records.
  *
  * These functions are pure (no side-effects, no UI imports) so they can be
- * consumed by both the estimator repo and the Bktadvisory portal repo.
+ * consumed by both the estimator repo and the BKT-Advisory portal repo.
  *
  * Visibility rules:
  * - QuoteRecord and ProjectRecord are client-facing (visible in Client Portal).

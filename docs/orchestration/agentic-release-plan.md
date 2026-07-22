@@ -4,7 +4,7 @@
 
 This document is the control-plane source of truth for the BKT Advisory website launch project. It defines the delivery sequence, agent operating standards, role assignments, testing requirements, and release gates for work scoped to the following repositories:
 
-- `jburkhardt4/Bktadvisory`
+- `jburkhardt4/BKT-Advisory`
 - `jburkhardt4/Bktadvisoryprojectestimator`
 
 This version formally retires the Figma Make agent from the active workflow. Phase 1 design-system alignment, theme parity, visual QA, and mobile UX auditing now belong to the GitHub code agents working directly in the codebase and preview environments.
@@ -15,8 +15,8 @@ This version formally retires the Figma Make agent from the active workflow. Pha
 
 The release workflow must stay anchored to these three live orchestration files:
 
-- `jburkhardt4/Bktadvisory/docs/orchestration/agentic-release-plan.md`
-- `jburkhardt4/Bktadvisory/docs/orchestration/prompt-library.md`
+- `jburkhardt4/BKT-Advisory/docs/orchestration/agentic-release-plan.md`
+- `jburkhardt4/BKT-Advisory/docs/orchestration/prompt-library.md`
 - `jburkhardt4/Bktadvisoryprojectestimator/docs/orchestration/estimator-execution-constraints.md`
 
 Usage rules:
@@ -56,7 +56,7 @@ The communication path is:
 
 ## Repositories in Scope
 
-### `jburkhardt4/Bktadvisory`
+### `jburkhardt4/BKT-Advisory`
 
 Primary responsibility:
 
@@ -384,8 +384,8 @@ A change is not release-ready unless it has:
 
 - confirm repository scope
 - treat the three live orchestration files as the control plane
-- store this release plan in `Bktadvisory`
-- store the prompt library in `Bktadvisory`
+- store this release plan in `BKT-Advisory`
+- store the prompt library in `BKT-Advisory`
 - store estimator-specific constraints in `Bktadvisoryprojectestimator`
 - create GitHub issues or equivalent work items from the active priorities
 

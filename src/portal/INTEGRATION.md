@@ -1,6 +1,6 @@
 # Portal Integration Notes
 
-> How the **Bktadvisory** portal repository consumes data from this estimator.
+> How the **BKT-Advisory** portal repository consumes data from this estimator.
 
 ---
 
@@ -19,7 +19,7 @@ that the portal can persist and manage.
 
 | File | Purpose |
 |---|---|
-| `src/portal/types.ts` | TypeScript interfaces for `QuoteRecord`, `OpportunityRecord`, `ProjectRecord`, and `ActivityEvent` — mirrors the canonical lifecycle model from `Bktadvisory/src/types/portal.ts` |
+| `src/portal/types.ts` | TypeScript interfaces for `QuoteRecord`, `OpportunityRecord`, `ProjectRecord`, and `ActivityEvent` — mirrors the canonical lifecycle model from `BKT-Advisory/src/types/portal.ts` |
 | `src/portal/mappers.ts` | Pure mapper functions — no UI dependencies |
 | `src/portal/samples.ts` | Sample input (`QuoteData`) and output objects for integration testing |
 | `src/portal/index.ts` | Barrel re-export for convenient imports |
@@ -98,7 +98,7 @@ Supported event types (canonical):
 ## Lifecycle Flow
 
 ```
-Estimator (this repo)              Portal (Bktadvisory repo)
+Estimator (this repo)              Portal (BKT-Advisory repo)
 ─────────────────────              ─────────────────────────
 calculateQuote()
        │
@@ -131,7 +131,7 @@ calculateQuote()
 
 ## What the Portal Must Consume
 
-The **Bktadvisory** portal repository should:
+The **BKT-Advisory** portal repository should:
 
 1. **Import the types** from this repo (or copy the type definitions):
    ```ts

@@ -17,9 +17,9 @@ This repository is responsible for estimator-specific behavior and launch-critic
 
 This repository should not become the catch-all location for unrelated marketing-site or portal work.
 
-## Relationship to `Bktadvisory`
+## Relationship to `BKT-Advisory`
 
-`Bktadvisory` remains the broader control-plane repository for launch orchestration, portal behavior, routing, and release governance.
+`BKT-Advisory` remains the broader control-plane repository for launch orchestration, portal behavior, routing, and release governance.
 
 Use this estimator repository when the task is specifically about:
 
@@ -29,7 +29,7 @@ Use this estimator repository when the task is specifically about:
 - estimator export, print, or handoff requirements
 - estimator-specific mobile defects
 
-Use `Bktadvisory` when the task is specifically about:
+Use `BKT-Advisory` when the task is specifically about:
 
 - marketing pages
 - client portal
@@ -157,7 +157,7 @@ Examples:
 - missing validation hooks
 - screenshot evidence workflow
 - minimal automated checks
-- handoff documentation to `Bktadvisory`
+- handoff documentation to `BKT-Advisory`
 
 ## Required Validation Notes
 
@@ -193,5 +193,5 @@ An estimator change is not release-ready unless it has:
 ## Execution Notes
 
 - This document is a constraint file, not an automation layer.
-- Use the prompt library in `Bktadvisory` to launch agent work.
+- Use the prompt library in `BKT-Advisory` to launch agent work.
 - When estimator work affects broader launch behavior, publish the implications back into the main orchestration review loop.

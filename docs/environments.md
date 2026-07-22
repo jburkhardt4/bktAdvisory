@@ -7,14 +7,14 @@ Use the public `/environments` route in the root app as the canonical visual ind
 Start the root app:
 
 ```bash
-cd /workspaces/Bktadvisory
+cd /workspaces/BKT-Advisory
 npm run dev
 ```
 
 Start the standalone estimator in a second terminal:
 
 ```bash
-cd /workspaces/Bktadvisory/Bktadvisoryprojectestimator
+cd /workspaces/BKT-Advisory/Bktadvisoryprojectestimator
 npm run dev
 ```
 

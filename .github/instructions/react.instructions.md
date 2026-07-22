@@ -1,7 +1,7 @@
 ---
 applyTo: "**/*.tsx, **/*.ts"
 ---
-# Bktadvisory Frontend & Routing Guidelines
+# BKT-Advisory Frontend & Routing Guidelines
 
 ## Routing & Navigation (React Router)
 * **Always use React Router hooks:** Use `useNavigate`, `useLocation`, and `<Navigate>` for internal routing. Never use `window.location.href`.

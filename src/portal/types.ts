@@ -1,8 +1,8 @@
 /**
  * Portal lifecycle record types.
  *
- * These types define the contract consumed by the Bktadvisory portal repository.
- * They mirror the canonical lifecycle model defined in Bktadvisory/src/types/portal.ts.
+ * These types define the contract consumed by the BKT-Advisory portal repository.
+ * They mirror the canonical lifecycle model defined in BKT-Advisory/src/types/portal.ts.
  * They are intentionally decoupled from the estimator UI so that the portal can
  * import them without pulling in React or any UI dependency.
  */
