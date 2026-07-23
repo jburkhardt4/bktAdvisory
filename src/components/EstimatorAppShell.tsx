@@ -6,6 +6,7 @@ import { Quote } from "./Quote";
 import { PersonaFunnel } from "./PersonaFunnel";
 import { Toaster } from "sonner";
 import { PWAHead } from "./PWAHead";
+import { RouteMeta } from "../seo/RouteMeta";
 import { FormData, QuoteData, PersonaMode, PersonaRole, initialFormData } from "../types";
 import { createLeadFromEstimator } from "./admin/salesCrmApi";
 
@@ -145,6 +146,7 @@ export function EstimatorAppShell() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <PWAHead />
+      <RouteMeta />
       <Navigation onNavigateToEstimator={handleNavigateToEstimator} />
       <Toaster />
 

@@ -1,7 +1,7 @@
 {
   "name": "BKT Advisory",
   "short_name": "BKT Advisory",
-  "description": "BKT Advisory — expert advisory, project estimation, and client portal services.",
+  "description": "BKT Advisory — Salesforce + Enterprise AI architecture, project estimation, and client portal.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",
@@ -12,13 +12,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-
     },
     {
       "src": "/apple-touch-icon.png",
-      "sizes": "192x192",
+      "sizes": "180x180",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

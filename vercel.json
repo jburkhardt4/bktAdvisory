@@ -1,6 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|Pinterest|redditbot|vkShare|SkypeUriPreview|Embedly|Iframely|flipboard|kakaotalk-scrap|W3C_Validator|Mastodon).*"
+        }
+      ],
+      "destination": "/api/og?p=:path*"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

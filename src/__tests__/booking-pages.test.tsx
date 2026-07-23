@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { createMemoryRouter, RouterProvider } from 'react-router';
+import { createMemoryRouter, MemoryRouter, RouterProvider } from 'react-router';
 
 // The real BookingModal loads the Cal.com iframe (@calcom/embed-react), which
 // can't resolve in jsdom. Mock it and surface `calLink` so we can assert the
@@ -30,7 +30,11 @@ import { router } from '../routes';
 
 describe('InterviewBookingPage (/calendar)', () => {
   it('renders the three personal interview types under an interview heading', () => {
-    render(<InterviewBookingPage />);
+    render(
+      <MemoryRouter>
+        <InterviewBookingPage />
+      </MemoryRouter>,
+    );
 
     expect(
       screen.getByRole('heading', { name: 'Schedule an Interview' }),
@@ -53,7 +57,11 @@ describe('InterviewBookingPage (/calendar)', () => {
     ['30-Minute Interview', 'john-burkhardt/30-minute-interview'],
     ['1-Hour Interview', 'john-burkhardt/1-hour-interview'],
   ])('opens the Cal.com modal for %s with event slug %s', async (name, calLink) => {
-    render(<InterviewBookingPage />);
+    render(
+      <MemoryRouter>
+        <InterviewBookingPage />
+      </MemoryRouter>,
+    );
 
     fireEvent.click(screen.getByRole('button', { name: new RegExp(name) }));
 
@@ -64,7 +72,11 @@ describe('InterviewBookingPage (/calendar)', () => {
 
 describe('ConsultingBookingPage (/schedule)', () => {
   it('renders the three consulting meeting types under a meeting heading', () => {
-    render(<ConsultingBookingPage />);
+    render(
+      <MemoryRouter>
+        <ConsultingBookingPage />
+      </MemoryRouter>,
+    );
 
     expect(
       screen.getByRole('heading', { name: 'Schedule a Meeting' }),
@@ -90,7 +102,11 @@ describe('ConsultingBookingPage (/schedule)', () => {
     ['Strategic Planning', 'john-burkhardt/strategic-planning'],
     ['Workshop', 'john-burkhardt/workshop'],
   ])('opens the Cal.com modal for %s with event slug %s', async (name, calLink) => {
-    render(<ConsultingBookingPage />);
+    render(
+      <MemoryRouter>
+        <ConsultingBookingPage />
+      </MemoryRouter>,
+    );
 
     fireEvent.click(screen.getByRole('button', { name: new RegExp(name) }));
 

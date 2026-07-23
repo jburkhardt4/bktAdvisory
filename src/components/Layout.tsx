@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import { AIChatbot } from './AIChatbot';
+import { RouteMeta } from '../seo/RouteMeta';
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -14,6 +15,7 @@ export function Layout() {
 
   return (
     <div className="bkt-app-shell">
+      <RouteMeta />
       <Navigation />
       <Outlet />
       <Footer />

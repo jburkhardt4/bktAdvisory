@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BookingModal } from './BookingModal';
+import { RouteMeta } from '../seo/RouteMeta';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIG — replace `CAL_USERNAME` with your Cal.com username and adjust the
@@ -154,6 +155,7 @@ function BookingPageShell({ heading, appointments }: BookingPageShellProps) {
 
   return (
     <>
+      <RouteMeta />
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0F172B] via-slate-900 to-blue-950 pt-9 pb-5 lg:pt-12 lg:pb-6">
         <div className="pointer-events-none absolute inset-0">
