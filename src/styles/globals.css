@@ -317,7 +317,7 @@ html {
 @keyframes bkt-marquee-scroll-right {
   from {
     transform: translateX(-50%);
-  }
+  } 
 
   to {
     transform: translateX(0);
